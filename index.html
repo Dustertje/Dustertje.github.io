@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="oi-OI">
+	<head>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+		<title>oi</title>
+	</head>
+	<body>
+		<script>
+			
+            let ughs = new URL(window.location.href);
+            let url = ughs.searchParams.get("url");
+            let urls;
+            urls = $.getJSON("redirects.json", function(urls) {
+				if(urls.links[url] != null || urls.links[url] != undefined) {
+					window.top.location = urls.links[url];
+				}
+            });
+        
+		</script>
+	</body>
+</html>
