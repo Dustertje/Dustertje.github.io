@@ -12,7 +12,7 @@
 		<script>
       let urls
       $.getJSON("../redirects.json", function(_urls) {
-			  urls = _urls;
+			  urls = _urls.links;
       });  
       function click(){
         document.getElementById('val').innerHTML = urls[$('#unshorten').val()];
