@@ -2,6 +2,8 @@
 	"links":{
 		"0": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 		"1": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 
-		"Biggege": "https://www.youtube.com/watch?v=i0vg2f82-Ok"
+		"Biggege": "https://www.youtube.com/watch?v=i0vg2f82-Ok",
+		"hi": "javascript:alert(1);",
+		"hello": "</p><a href=\"google.com\">hi</a>"
 	}
 }
