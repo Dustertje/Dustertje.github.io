@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en-UK">
+	<head>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+		<title>--++==[[||UNSHORTEN||]]==++--</title>
+	</head>
+	<body>
+		<H1>Unshorten dustertje url</H1>
+    <input type="text" id="unshorten" value="" \>
+    <button onclick="click();">Unshorten</button>
+    <p id="val"></p>
+		<script>
+      let urls
+      $.getJSON("redirects.json", function(_urls) {
+			  urls = _urls;
+      });  
+      function click(){
+        $("#val").innerHTML = urls[$("#unshorten").value];
+      }
+		</script>
+	</body>
+</html>
