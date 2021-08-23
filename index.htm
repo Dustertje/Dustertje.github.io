@@ -13,6 +13,7 @@
             let urls;
             urls = $.getJSON("redirects.json", function(urls) {
 				if(urls.links[url] != null || urls.links[url] != undefined) {
+					console.log(urls.links[url]);
 					if(typeof(urls.links[url]) == "object"){
 						console.log("isobj");
 						if(urls.links[url].mode=="wrap"){
