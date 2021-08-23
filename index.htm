@@ -5,7 +5,7 @@
 		<title>--++==[[||REDIRECTOR||]]==++--</title>
 	</head>
 	<body>
-		<H1>PLEASE DO NOT BLOCK JAVASCRIPT, ALSO DON'T USE INTERNET EXPLORER (OR SIMMALAR)</H1>
+		<H1 id="h1">PLEASE DO NOT BLOCK JAVASCRIPT, ALSO DON'T USE INTERNET EXPLORER (OR SIMMALAR)</H1>
 		<script>
 			
             let ughs = new URL(window.location.href);
@@ -13,7 +13,14 @@
             let urls;
             urls = $.getJSON("redirects.json", function(urls) {
 				if(urls.links[url] != null || urls.links[url] != undefined) {
-					window.top.location = urls.links[url];
+					if(typeof(urls.links[url]) == "object"){
+						if(urls.links[url].mode=="wrap"){
+							let h1 = document.getElementById("h1");
+							h1.innerHTML = "";
+							h1.outerHTML = '<iframe src="'+urls.links[url].url+'" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen>Enable IFrames</iframe>'
+						}
+					}
+					else window.top.location = urls.links[url];
 				}
             });
         
